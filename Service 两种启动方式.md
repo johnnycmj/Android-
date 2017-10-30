@@ -1,9 +1,22 @@
+## Service 理解
+
+#### Service是什么？
+
+Service 作为android系统的四大组件之一，是一种可以在后台长时间运行操作而没有用户界面的应用组件。
+
+#### Service和Thread的区别
+
+1、Thread是程序运行的最小单位即线程，可以执行异步长时间耗时的操作。
+
+2、Service是android中的组件，是运行在主线程上的，是要依托android程序运行的，所以不能做耗时操作。
+
 Service android是四大组件之一。Service 是一个抽象类，我们需要些一个自定义Service继承于Service。
 
 ## 启动方式
 Service 的启动方式有两种，一种是startService(),一种是bindService().这两种方式有有什么区别.
 
-startService()，启动完之后该service就在后台运行，其生命周期跟启动它的Context没有任何关系。也不能跟Context通讯。bindService()启动之后生命周期跟启动它的Context有关，比如Activity、fragment、service等。在Context中解绑之后，如果改Service没有任何绑定后该Service也就结束。
+- startService()，启动完之后该service就在后台运行，其生命周期跟启动它的Context没有任何关系。也不能跟Context通讯。
+- bindService()启动之后生命周期跟启动它的Context有关，比如Activity、fragment、service等。在Context中解绑之后，如果改Service没有任何绑定后该Service也就结束。
 
 ## 生命周期
 Service 的生命周期跟启动方式有关。
